@@ -1,0 +1,84 @@
+﻿@model List<AdenyaDbFirstHastaTakip.Models.Asilar>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-4">
+
+    <h2>Aşı Takip Listesi</h2>
+
+    <form method="get">
+        <div class="row mb-3">
+            <div class="col-md-10">
+                <input type="text"
+                       name="search"
+                       value="@ViewBag.Search"
+                       class="form-control"
+                       placeholder="Aşı veya hayvan ara..." />
+            </div>
+
+            <div class="col-md-2">
+                <button class="btn btn-primary w-100">
+                    Ara
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <a href="/Asilar/Create"
+       class="btn btn-success mb-3">
+        Yeni Aşı Ekle
+    </a>
+
+    <table class="table table-bordered table-striped">
+
+        <thead>
+            <tr>
+                <th>Hayvan</th>
+                <th>Aşı Adı</th>
+                <th>Aşı Tarihi</th>
+                <th>Sonraki Aşı</th>
+                <th>İşlemler</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>@item.Hayvan?.HayvanAdi</td>
+
+                    <td>@item.AsiAdi</td>
+
+                    <td>
+                        @item.AsiTarihi.ToShortDateString()
+                    </td>
+
+                    <td>
+                        @item.SonrakiAsiTarihi?.ToShortDateString()
+                    </td>
+
+                    <td>
+
+                        <a href="/Asilar/Edit/@item.Id"
+                           class="btn btn-warning btn-sm">
+                            Güncelle
+                        </a>
+
+                        <a href="/Asilar/Delete/@item.Id"
+                           class="btn btn-danger btn-sm">
+                            Sil
+                        </a>
+
+                    </td>
+
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+
+</div>

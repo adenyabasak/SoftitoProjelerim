@@ -1,0 +1,52 @@
+﻿@model AdenyaDbFirstHastaTakip.Models.Hayvanlar
+
+<div class="container mt-4">
+
+    <h2>Hayvan Güncelle</h2>
+
+    <form method="post">
+
+        <input type="hidden" asp-for="Id" />
+
+        <div class="mb-3">
+            <label>Hayvan Adı</label>
+            <input asp-for="HayvanAdi" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Tür</label>
+            <input asp-for="Tur" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Irk</label>
+            <input asp-for="Irk" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Yaş</label>
+            <input asp-for="Yas" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Cinsiyet</label>
+            <select asp-for="Cinsiyet" class="form-control">
+                <option value="">Seçiniz</option>
+                <option>Dişi</option>
+                <option>Erkek</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label>Sahip</label>
+            <select asp-for="SahipId" asp-items="ViewBag.SahipId" class="form-control">
+                <option value="">Sahip seçiniz</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-warning">Güncelle</button>
+        <a href="/Hayvanlar" class="btn btn-secondary">Geri Dön</a>
+
+    </form>
+
+</div>

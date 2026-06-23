@@ -1,0 +1,43 @@
+﻿@model AdenyaDbFirstHastaTakip.Models.Sahipler
+
+@{
+    ViewData["Title"] = "Yeni Sahip Ekle";
+}
+
+<div class="container mt-4">
+
+    <h2>Yeni Sahip Ekle</h2>
+
+    <form method="post">
+
+        <div class="mb-3">
+            <label>Ad Soyad</label>
+            <input asp-for="AdSoyad" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Telefon</label>
+            <input asp-for="Telefon" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Email</label>
+            <input asp-for="Email" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Adres</label>
+            <textarea asp-for="Adres" class="form-control"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-success">
+            Kaydet
+        </button>
+
+        <a href="/Sahipler" class="btn btn-secondary">
+            Geri Dön
+        </a>
+
+    </form>
+
+</div>

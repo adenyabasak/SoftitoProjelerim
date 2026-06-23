@@ -1,0 +1,71 @@
+﻿@model AdenyaDbFirstHastaTakip.Models.Tedaviler
+
+<div class="container mt-4">
+
+    <h2>Yeni Tedavi Ekle</h2>
+
+    <form method="post">
+
+        <div class="mb-3">
+            <label>Hayvan</label>
+
+            <select asp-for="HayvanId"
+                    asp-items="ViewBag.HayvanId"
+                    class="form-control">
+                <option value="">Hayvan Seçiniz</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label>Veteriner</label>
+
+            <select asp-for="VeterinerId"
+                    asp-items="ViewBag.VeterinerId"
+                    class="form-control">
+                <option value="">Veteriner Seçiniz</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label>Tedavi Adı</label>
+            <input asp-for="TedaviAdi" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Açıklama</label>
+            <textarea asp-for="Aciklama" class="form-control"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label>Tedavi Tarihi</label>
+            <input asp-for="TedaviTarihi"
+                   type="date"
+                   class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Ücret</label>
+            <input asp-for="Ucret" class="form-control" />
+        </div>
+
+        <div class="form-check mb-3">
+            <input asp-for="OdendiMi"
+                   class="form-check-input" />
+
+            <label class="form-check-label">
+                Ödendi Mi?
+            </label>
+        </div>
+
+        <button class="btn btn-success">
+            Kaydet
+        </button>
+
+        <a href="/Tedaviler"
+           class="btn btn-secondary">
+            Geri Dön
+        </a>
+
+    </form>
+
+</div>

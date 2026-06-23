@@ -1,0 +1,50 @@
+﻿@model AdenyaDbFirstHastaTakip.Models.Randevular
+
+<div class="container mt-4">
+
+    <h2>Randevu Güncelle</h2>
+
+    <form method="post">
+
+        <input type="hidden" asp-for="Id" />
+
+        <div class="mb-3">
+            <label>Hayvan</label>
+            <select asp-for="HayvanId" asp-items="ViewBag.HayvanId" class="form-control">
+                <option value="">Hayvan Seçiniz</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label>Veteriner</label>
+            <select asp-for="VeterinerId" asp-items="ViewBag.VeterinerId" class="form-control">
+                <option value="">Veteriner Seçiniz</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label>Randevu Tarihi</label>
+            <input asp-for="RandevuTarihi" type="datetime-local" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Randevu Durumu</label>
+            <select asp-for="RandevuDurumu" class="form-control">
+                <option value="">Durum Seçiniz</option>
+                <option>Bekliyor</option>
+                <option>Tamamlandı</option>
+                <option>İptal Edildi</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label>Notlar</label>
+            <textarea asp-for="Notlar" class="form-control"></textarea>
+        </div>
+
+        <button class="btn btn-warning">Güncelle</button>
+        <a href="/Randevular" class="btn btn-secondary">Geri Dön</a>
+
+    </form>
+
+</div>

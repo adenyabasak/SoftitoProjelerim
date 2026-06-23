@@ -1,0 +1,67 @@
+﻿@model AdenyaDbFirstHastaTakip.Models.Asilar
+
+<div class="container mt-4">
+
+    <h2>Aşı Güncelle</h2>
+
+    <form method="post">
+
+        <input type="hidden" asp-for="Id" />
+
+        <div class="mb-3">
+            <label>Hayvan</label>
+
+            <select asp-for="HayvanId"
+                    asp-items="ViewBag.HayvanId"
+                    class="form-control">
+
+                <option value="">
+                    Hayvan Seçiniz
+                </option>
+
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label>Aşı Adı</label>
+
+            <input asp-for="AsiAdi"
+                   class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Aşı Tarihi</label>
+
+            <input asp-for="AsiTarihi"
+                   type="date"
+                   class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Sonraki Aşı Tarihi</label>
+
+            <input asp-for="SonrakiAsiTarihi"
+                   type="date"
+                   class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label>Açıklama</label>
+
+            <textarea asp-for="Aciklama"
+                      class="form-control">
+            </textarea>
+        </div>
+
+        <button class="btn btn-warning">
+            Güncelle
+        </button>
+
+        <a href="/Asilar"
+           class="btn btn-secondary">
+            Geri Dön
+        </a>
+
+    </form>
+
+</div>

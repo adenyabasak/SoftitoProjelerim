@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - Adenya Veteriner Poliliniği</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <style>
+            body {
+                font-family: 'Segoe UI', sans-serif;
+                background-color: #f8fafc;
+                color: #1f2937;
+            }
+
+            .user-navbar {
+                background: white;
+                box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+                padding: 15px 0;
+            }
+
+            .brand {
+                font-weight: 800;
+                font-size: 24px;
+                color: #0f766e;
+                text-decoration: none;
+            }
+
+            .nav-link {
+                font-weight: 500;
+                color: #374151 !important;
+                margin-left: 15px;
+            }
+
+            .nav-link:hover {
+                color: #0f766e !important;
+            }
+
+            .hero {
+                background: linear-gradient(135deg, #0f766e, #14b8a6);
+                color: white;
+                padding: 90px 0;
+                border-radius: 0 0 40px 40px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+                font-weight: 800;
+            }
+
+            .hero p {
+                font-size: 18px;
+                opacity: 0.95;
+            }
+
+            .btn-main {
+                background: white;
+                color: #0f766e;
+                border-radius: 30px;
+                padding: 12px 28px;
+                font-weight: 700;
+                text-decoration: none;
+            }
+
+            .btn-main:hover {
+                background: #ecfeff;
+                color: #0f766e;
+            }
+
+            .section-title {
+                font-weight: 800;
+                color: #111827;
+            }
+
+            .service-card {
+                background: white;
+                border-radius: 22px;
+                padding: 28px;
+                box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+                height: 100%;
+                transition: 0.3s;
+            }
+
+            .service-card:hover {
+                transform: translateY(-6px);
+            }
+
+            .footer {
+                background: #111827;
+                color: #d1d5db;
+                padding: 35px 0;
+                margin-top: 60px;
+            }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg user-navbar">
+        <div class="container">
+            <a class="brand" href="/">Adenya Vet</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#userMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="userMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Ana Sayfa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Home/Hizmetler">Hizmetler</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Home/Hakkimizda">Hakkımızda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Home/Iletisim">İletişim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Admin">Admin Panel</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    @RenderBody()
+
+    <footer class="footer">
+        <div class="container d-flex justify-content-between">
+            <div>
+                <h5>Adenya Veteriner Kliniği</h5>
+                <p class="mb-0">Dostlarınız için güvenilir sağlık takibi.</p>
+            </div>
+
+            <div>
+                <p class="mb-1">📍 İstanbul</p>
+                <p class="mb-0">☎ 0555 000 00 00</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

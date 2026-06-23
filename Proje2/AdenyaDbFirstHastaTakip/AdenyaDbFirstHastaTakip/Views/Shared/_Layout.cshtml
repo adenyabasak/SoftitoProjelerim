@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - Adenya Hasta Takip</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom mb-4">
+        <div class="container-fluid">
+
+            <a class="navbar-brand fw-bold" href="/">
+                Adenya Hasta Takip
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Sahipler">Sahipler</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Hayvanlar">Hayvanlar</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Veterinerler">Veteriner Hekimler</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Tedaviler">Tedaviler</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Asilar">Aşılar</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Randevular">Randevular</a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <main class="container">
+        @RenderBody()
+    </main>
+
+    <footer class="border-top footer text-muted mt-5 py-3">
+        <div class="container">
+            &copy; 2026 - Adenya Hasta Takip
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

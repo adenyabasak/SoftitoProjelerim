@@ -1,0 +1,153 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="mb-4">Raporlar</h2>
+
+<div class="card shadow border-0 mb-4">
+    <div class="card-header bg-dark text-white">
+        Türlere Göre Hayvan Sayısı
+    </div>
+
+    <div class="card-body">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Hayvan Türü</th>
+                    <th>Kayıt Sayısı</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in ViewBag.TurRaporu)
+                {
+                    <tr>
+                        <td>@item.Tur</td>
+                        <td>@item.Sayi</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="card shadow border-0 mb-4">
+
+    <div class="card-header bg-primary text-white">
+        Veterinere Göre Tedavi Sayıları
+    </div>
+
+    <div class="card-body">
+
+        <table class="table table-bordered">
+
+            <thead>
+                <tr>
+                    <th>Veteriner</th>
+                    <th>Tedavi Sayısı</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                @foreach (var item in ViewBag.VeterinerTedaviRaporu)
+                {
+                    <tr>
+                        <td>@item.Veteriner</td>
+                        <td>@item.TedaviSayisi</td>
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+<div class="card shadow border-0 mb-4">
+    <div class="card-header bg-warning text-dark">
+        Yaklaşan Aşılar
+    </div>
+
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Hayvan</th>
+                    <th>Aşı Adı</th>
+                    <th>Sonraki Aşı Tarihi</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in ViewBag.YaklasanAsilar)
+                {
+                    <tr>
+                        <td>@item.Hayvan?.HayvanAdi</td>
+                        <td>@item.AsiAdi</td>
+                        <td>@item.SonrakiAsiTarihi?.ToShortDateString()</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="card shadow border-0 mb-4">
+    <div class="card-header bg-danger text-white">
+        Ödenmemiş Tedaviler
+    </div>
+
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Hayvan</th>
+                    <th>Veteriner</th>
+                    <th>Tedavi</th>
+                    <th>Ücret</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in ViewBag.OdenmemisTedaviler)
+                {
+                    <tr>
+                        <td>@item.Hayvan?.HayvanAdi</td>
+                        <td>@item.Veteriner?.AdSoyad</td>
+                        <td>@item.TedaviAdi</td>
+                        <td>@item.Ucret ₺</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="card shadow border-0 mb-4">
+    <div class="card-header bg-success text-white">
+        Son 30 Günde Yapılan Tedaviler
+    </div>
+
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Hayvan</th>
+                    <th>Veteriner</th>
+                    <th>Tedavi</th>
+                    <th>Tarih</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in ViewBag.SonOtuzGunTedaviler)
+                {
+                    <tr>
+                        <td>@item.Hayvan?.HayvanAdi</td>
+                        <td>@item.Veteriner?.AdSoyad</td>
+                        <td>@item.TedaviAdi</td>
+                        <td>@item.TedaviTarihi.ToShortDateString()</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
